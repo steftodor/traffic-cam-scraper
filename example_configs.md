@@ -45,7 +45,7 @@ capture_interval = 30
  * PTZ: Some (May occasionally move)
  * Source URL: [City of Ottawa](https://traffic.ottawa.ca/map/)
 ### Sample
-![Ottawa Sample](samples\ottawa-canada1.gif)
+![Ottawa Sample](samples/ottawa-canada1.gif)
 ### Note
  Known issue, sometime they will just randomly go offline. The image set collected afterwards will need to be cleaned before it can be used for a timelapse to avoid random flashing. Use `ottawa_cleanset.py` to remove most of these broken frames.
 
@@ -69,7 +69,7 @@ capture_interval = 300
  * PTZ: Unknown
  * Source URL: [City of Toronto](https://gtaupdate.com/traffic/) *This is a third party site that allows cameras to be found easier*
 ### Sample
-![Toronto Sample](samples\toronto-canada1.gif)
+![Toronto Sample](samples/toronto-canada1.gif)
 ### Note
 n/a
 
@@ -90,7 +90,7 @@ capture_interval = 60
  * PTZ: Unknown
  * Source URL: [City of Calgary](https://trafficcam.calgary.ca)
 ### Sample
-![Calgary Sample](samples\calgary-canada1.gif)
+![Calgary Sample](samples/calgary-canada1.gif)
 ### Note
 n/a
 
@@ -112,7 +112,7 @@ capture_interval = 30
  * PTZ: Unknown
  * Source URL: [511 ny](https://511ny.org/map/)
 ### Sample
-![New York City Sample](samples\nyc-usa1.gif)
+![New York City Sample](samples/nyc-usa1.gif)
 ### Note
 n/a
 
@@ -134,6 +134,6 @@ capture_interval = 10
  * PTZ: Some (Some Can often change positions)
  * Source URL: [Naxi Radio](https://www.naxi.rs/kamere)
 ### Sample
-![Beograd Sample](samples\beograd-serbia1.gif)
+![Beograd Sample](samples/beograd-serbia1.gif)
 ### Note
 n/a

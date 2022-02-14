@@ -16,9 +16,8 @@ This script was developed in order to scrape images from multiple traffic camera
 The idea of this was conceived in order to capture time-lapses or events through traffic cameras that are readily available to the public in many cities. 
 
 ## Sample Timelapses
-![New York City Sample](samples\nyc-usa1.gif)![Toronto Sample](samples\toronto-canada1.gif)\
-![Calgary Sample](samples\calgary-canada1.gif)\
-
+![New York City Sample](samples/nyc-usa1.gif)![Toronto Sample](samples/toronto-canada1.gif)
+![Calgary Sample](samples/calgary-canada1.gif)
 
 ## Getting Started
 
