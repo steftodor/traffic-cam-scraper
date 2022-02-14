@@ -1,8 +1,17 @@
+#----------------------------------------------------------------------------
+# camera_scraper.py
+# This script was developed in order to scrape images from multiple traffic camera feeds from one city/organization.
+# This script is solely for pulling the latest camera feeds and placing them in folders
+#
+# Created By: 
+#   Stefan Todorovic - github.com/steftodor
+#
+# version ='0.1'
+#
+# notes : none
 
 from datetime import datetime
-import time
-import requests
-import os
+import time, requests, os
 
 
 # EXAMPLE camera url of https://mycity.com/trafficcameras/camera=22/capture

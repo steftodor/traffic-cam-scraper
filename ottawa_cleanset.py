@@ -1,4 +1,15 @@
-# NOTE THIS IS VERY MUCH A WORK IN PROGRESS, HAS WORKED EVERY TIME I'VE TRIED IT SO FAR BUT IS NOWHERE NEAR POLISHED
+#----------------------------------------------------------------------------
+# ottawa_cleanset.py
+# This script was developed to remove the "Timeout" or "Camera Unavailable" frames that often appear in these scrapes.
+# 
+#
+# Created By: 
+#   Stefan Todorovic - github.com/steftodor
+#
+# version ='0.1'
+#
+# notes:    THIS IS VERY MUCH A WORK IN PROGRESS, nowhere near polished and could be very buggy
+#           requirements.txt must be installed   
 
 import os
 from PIL import Image
@@ -8,7 +19,8 @@ import shutil
 
 img_dir = "camera" # Directory where subdirectories for each camera will be stored
 img_type = "jpeg" # File extention without period
-camera_folders = [ f.path for f in os.scandir(img_dir) if f.is_dir() ]
+
+
 
 def configure_reject_folders():
     for camera in camera_folders:
@@ -24,7 +36,7 @@ def sort_images():
     for camera in camera_folders:
         images = os.listdir(camera)
         for img in images:
-            if img_type in img:
+            if img.endswith(img_type):
                 print(f"{camera}/{img}")
                 current_image = np.array(Image.open(f"{camera}/{img}"))
                 image_text = pytesseract.image_to_string(current_image)
@@ -35,6 +47,8 @@ def sort_images():
             else:
                 print("NOT A VALID IMG FILE")
 
+
+camera_folders = [ f.path for f in os.scandir(img_dir) if f.is_dir() ]
 configure_reject_folders()
 sort_images()
 
