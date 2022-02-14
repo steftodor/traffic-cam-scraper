@@ -34,18 +34,20 @@ def configure_reject_folders():
 
 def sort_images():
     for camera in camera_folders:
+        print(camera)
         images = os.listdir(camera)
         for img in images:
             if img.endswith(img_type):
-                print(f"{camera}/{img}")
                 current_image = np.array(Image.open(f"{camera}/{img}"))
                 image_text = pytesseract.image_to_string(current_image)
-                print(image_text)
                 if(("Unavailable" in image_text) or ("Timed" in image_text)):
-                    print("FILE HAS BEEN MOVED")
+                    status = "Filed was rejected"
                     shutil.move(f"{camera}/{img}", f"{camera}/reject/{img}")
+                else:
+                    status = "Not rejected"
             else:
-                print("NOT A VALID IMG FILE")
+                status = "NOT A VALID IMG FILE"
+            print(f"\t{img}\t\t\t\t\t{status}")
 
 
 camera_folders = [ f.path for f in os.scandir(img_dir) if f.is_dir() ]

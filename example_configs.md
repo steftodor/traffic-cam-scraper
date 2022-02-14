@@ -31,7 +31,7 @@
 ## Ottawa, Canada
 ### Configuration 
 ```
-url_front = "https://traffic.ottawa.ca/beta/camera?id=c"
+url_front = "https://traffic.ottawa.ca/beta/camera?id="
 url_end = ""
 camera_ids = [87, 33, 48, 95]
 img_type = "jpeg"

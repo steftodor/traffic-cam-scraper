@@ -7,7 +7,7 @@
   - [Getting Started](#getting-started)
     - [To use just the basic camera scraper](#to-use-just-the-basic-camera-scraper)
     - [Eliminating broken frames (Ottawa)](#eliminating-broken-frames-ottawa)
-    - [Generating gif or video](#generating-gif-or-video)
+    - [Generating gif](#generating-gif)
 
 
 ## Introduction
@@ -44,5 +44,10 @@ The idea of this was conceived in order to capture time-lapses or events through
 4. For each camera subdirectory verify the `reject` folder for validity
 
 
-### Generating gif or video 
-
+### Generating gif
+1. Ensure that all prerequisite packages in `requirements.txt` are installed
+2. Update the following values to match the ones from `camera_scraper.py`
+   1. img_dir
+   2. img_type
+3. Run `make_gif.py`
+4. For each camera subdirectory the gif will be provided as `movie.gif`

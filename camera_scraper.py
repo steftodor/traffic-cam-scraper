@@ -24,9 +24,17 @@ url_end = "" # portion url after the camera ID
 camera_ids = [] # Camera id (part of url that changes to indicate camera)
 img_type = "" # File extention used when saving image files
 
+url_front = "https://traffic.ottawa.ca/beta/camera?id="
+url_end = ""
+camera_ids = [38, 66, 188]
+img_type = "jpeg"
+
+
+
 img_dir = "camera" # Directory where subdirectories for each camera will be stored
 capture_interval = 10 # Interval between end of last capture and start of current capture
 
+capture_interval = 30 
 
 
 def capture_all_cameras():
