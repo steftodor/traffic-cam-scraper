@@ -52,7 +52,6 @@ def sort_images():
                     shutil.move(f"{camera}/{img}", f"{camera}/reject/{img}")
             else:
                 status = "NOT A VALID IMG FILE"
-                shutil.move(f"{camera}/{img}", f"{camera}/reject/{img}")
             print(f"\t{img}\t\t\t\t\t{status}")
 
 
