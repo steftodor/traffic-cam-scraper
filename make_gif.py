@@ -10,6 +10,7 @@
 # notes:    THIS IS VERY MUCH A WORK IN PROGRESS, nowhere near polished and could be very buggy
 #           requirements.txt must be installed   
 
+from email.mime import image
 import imageio
 import os
 
@@ -36,8 +37,11 @@ def run_camera(camera_dir):
         else:
             status = "NOT A VALID IMG FILE"
         print(f"\t{img}\t\t\t\t\t{status}")
-    print(f"\tBuilding file for {camera_dir}")
-    imageio.mimsave(camera_dir+ "/"+'movie.gif', images)
+    if len(images) > 0:
+        print(f"\tBuilding file for {camera_dir}")
+        imageio.mimsave(camera_dir+ "/"+'movie.gif', images)
+    else:
+        print(f"\tThere are zero valid images in {camera_dir}")
     
 
 
@@ -49,5 +53,5 @@ def run_folder():
 
 
 camera_folders = [ f.path for f in os.scandir(img_dir) if f.is_dir() ]
-
+camera_folders.sort()
 run_folder()

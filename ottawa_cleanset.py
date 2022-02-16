@@ -51,6 +51,7 @@ def sort_images():
 
 
 camera_folders = [ f.path for f in os.scandir(img_dir) if f.is_dir() ]
+camera_folders.sort()
 configure_reject_folders()
 sort_images()
 
