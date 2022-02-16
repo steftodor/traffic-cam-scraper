@@ -39,15 +39,20 @@ def sort_images():
         images.sort()
         for img in images:
             if img.endswith(img_type):
-                current_image = np.array(Image.open(f"{camera}/{img}"))
-                image_text = pytesseract.image_to_string(current_image)
-                if(("Unavailable" in image_text) or ("Timed" in image_text)):
-                    status = "Filed was rejected"
+                try:
+                    current_image = np.array(Image.open(f"{camera}/{img}"))
+                    image_text = pytesseract.image_to_string(current_image)
+                    if(("Unavailable" in image_text) or ("Timed" in image_text)):
+                        status = "Filed was rejected"
+                        shutil.move(f"{camera}/{img}", f"{camera}/reject/{img}")
+                    else:
+                        status = "Not rejected"
+                except:
+                    status = "There was an error with the image"
                     shutil.move(f"{camera}/{img}", f"{camera}/reject/{img}")
-                else:
-                    status = "Not rejected"
             else:
                 status = "NOT A VALID IMG FILE"
+                shutil.move(f"{camera}/{img}", f"{camera}/reject/{img}")
             print(f"\t{img}\t\t\t\t\t{status}")
 
 
