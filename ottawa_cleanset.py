@@ -36,6 +36,7 @@ def sort_images():
     for camera in camera_folders:
         print(camera)
         images = os.listdir(camera)
+        images.sort()
         for img in images:
             if img.endswith(img_type):
                 current_image = np.array(Image.open(f"{camera}/{img}"))
